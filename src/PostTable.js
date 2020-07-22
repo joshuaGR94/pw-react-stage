@@ -9,14 +9,17 @@ import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import { Container, ButtonGroup, Button } from 'react-bootstrap'
 import { AddButton } from './components/AddButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const TodosTable = () => {
     const [todos, setTodos] = useState([])
     const [loader, showLoader, hideLoader] = useFullPageLoader();
     const { SearchBar } = Search;
-    const noData = 'nessun dato ';
-
+    const noData = 'nessun dato';
+    
+    
+    
     const deleteRow = () => {
         const data = this.node.selectionContext.selected;
         console.log(data)
@@ -26,8 +29,8 @@ const TodosTable = () => {
     
     const actionFormatter = (cell, row, rowIndex) => {
         return (<ButtonGroup>
-            <Button onClick={() => console.log(row)} >Elimina</Button>
-            <Button onClick={() => console.log(row)} >Modifica</Button>
+            <Button onClick={() => console.log(row)} ><FontAwesomeIcon icon='trash-alt' /> Elimina</Button>
+            <Button onClick={() => console.log(row)} ><FontAwesomeIcon icon='edit' />Modifica</Button>
         </ButtonGroup>)
     }
 
@@ -37,11 +40,7 @@ const TodosTable = () => {
         { dataField: "name", text: "Titolo", filter: textFilter(), sort: true },
         { dataField: "email", text: "email", filter: textFilter(), sort: true },
         { dataField: "body", text: "body", filter: textFilter(), sort: true },
-        {
-            datafield: "action", text: "action", isDummyField: true,
-            formatter: actionFormatter
-
-        }
+        { datafield: "action", text: "action", isDummyField: true, formatter: actionFormatter }
 
     ];
     const selectRow = {
@@ -82,6 +81,7 @@ const TodosTable = () => {
                 keyField="id"
                 data={todos}
                 columns={column}
+
                 search
             >
                 {
@@ -95,9 +95,9 @@ const TodosTable = () => {
 
                             </div>
 
-                            <div className='table table-responsive table-sm'>
+                            <div className='table table-responsive table-sm '>
                                 <BootstrapTable
-                                    classes='table thead-dark'
+                                    classes='table thead-dark align-baseline'
                                     {...props.baseProps}
                                     pagination={paginationFactory()}
                                     selectRow={selectRow}
@@ -106,6 +106,7 @@ const TodosTable = () => {
                                     hover={true}
                                     noDataIndication={noData}
                                     condensed={true}
+                                    ce
                                 />
                             </div>
                         </Fragment>

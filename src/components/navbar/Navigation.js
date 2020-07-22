@@ -27,7 +27,7 @@ const Navigation = () => {
                         </Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link to="/todos" className='nav-link'> Table Todos
+                    <Link to="/todos" className='nav-link'> Table Comments with react boostrap table
                         </Link>
                 </Nav.Item>
             </Nav>
