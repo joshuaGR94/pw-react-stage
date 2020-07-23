@@ -8,9 +8,9 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import { Container, Button } from 'react-bootstrap'
-import { AddButton } from './components/AddButton';
+import { AddButton } from './components/Button-CRUD/AddButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import style from './styles/th-styles.module.css'
+
 
 
 const TodosTable = () => {
