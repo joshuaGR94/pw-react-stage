@@ -5,6 +5,7 @@ import Navigation from './components/navbar/Navigation';
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import TodosTable from './PostTable';
+import CommentsForm from './CommentsForm';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                     <Route exact path='/' component={Home} />
                     <Route exact path="/comments" component={DataTable} />
                     <Route path="/todos" component={TodosTable} />
+                    <Route path="/form" component={CommentsForm} />
                     <Route component={NotFound} />{/*sempre alla fine*/}
                 </Switch>
             </Router>

@@ -1,17 +1,16 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
 import { Field, ErrorMessage } from 'formik'
 import TextError from './TextError'
 
-const Textarea = (props) => {
-    const{label,name,...rest} = props
-    return (
-        <Form.Control>
-         <label htmlFor={name}>{label}</label>
-         <Field as='textarea' id={name} name={name} {...rest} />
-         <ErrorMessage name={name} component={TextError}/>
-        </Form.Control>
-    )
+function Textarea (props) {
+  const { label, name, ...rest } = props
+  return (
+    <div className='form-group'>
+      <label htmlFor={name}>{label}</label>
+      <Field as='textarea' id={name} name={name} {...rest} className='form-control'/>
+      <ErrorMessage component={TextError} name={name} />
+    </div>
+  )
 }
 
 export default Textarea

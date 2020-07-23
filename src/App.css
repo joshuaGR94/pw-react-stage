@@ -55,3 +55,7 @@ fp-container fp-loader {
     z-index: 1000;
     position: absolute;
 }
+
+.errors {
+    color: red;
+}
