@@ -7,9 +7,10 @@ import 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.c
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
-import { Container, ButtonGroup, Button } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 import { AddButton } from './components/AddButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import style from './styles/th-styles.module.css'
 
 
 const TodosTable = () => {
@@ -28,19 +29,19 @@ const TodosTable = () => {
 
     
     const actionFormatter = (cell, row, rowIndex) => {
-        return (<ButtonGroup>
-            <Button onClick={() => console.log(row)} ><FontAwesomeIcon icon='trash-alt' /> Elimina</Button>
-            <Button onClick={() => console.log(row)} ><FontAwesomeIcon icon='edit' />Modifica</Button>
-        </ButtonGroup>)
+        return (<div className="d-flex justify-content-around">
+            <Button variant='secondary' size='sm' onClick={() => console.log(row)} ><FontAwesomeIcon icon='edit' />Modifica</Button>
+            <Button variant="danger" size='sm' onClick={() => console.log(row.id)} ><FontAwesomeIcon icon='trash-alt' /> Elimina</Button>
+            </div>)
     }
 
     //dataField must match the key of the json obj  
     const column = [
 
-        { dataField: "name", text: "Titolo", filter: textFilter(), sort: true },
+        { dataField: "name", text: "Titolo",/* filter: textFilter(),*/ sort: true },
         { dataField: "email", text: "email", filter: textFilter(), sort: true },
         { dataField: "body", text: "body", filter: textFilter(), sort: true },
-        { datafield: "action", text: "action", isDummyField: true, formatter: actionFormatter }
+        { datafield: "action", text: "action", isDummyField: true, formatter: actionFormatter ,classes: {verticalAling: "top"}}
 
     ];
     const selectRow = {
@@ -97,7 +98,7 @@ const TodosTable = () => {
 
                             <div className='table table-responsive table-sm '>
                                 <BootstrapTable
-                                    classes='table thead-dark align-baseline'
+                                    classes='thead-dark'
                                     {...props.baseProps}
                                     pagination={paginationFactory()}
                                     selectRow={selectRow}
@@ -106,7 +107,6 @@ const TodosTable = () => {
                                     hover={true}
                                     noDataIndication={noData}
                                     condensed={true}
-                                    ce
                                 />
                             </div>
                         </Fragment>
