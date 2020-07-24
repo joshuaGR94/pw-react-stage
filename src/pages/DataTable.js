@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../components/FontAwesomeIcons';
-import './App.css';
+import '../App.css';
 import useFullPageLoader from '../hooks/useFullPageLoader';
 import Paginator from '../components/table/Paginator';
 import TableHeader from '../components/table/TableHeader';

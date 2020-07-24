@@ -1,5 +1,5 @@
 import React from 'react'
-import CommentsForm from '../../CommentsForm'
+import CommentsForm from'../../pages/CommentsForm'
 
 const Acaso = () => {
     const data ={
@@ -9,6 +9,7 @@ const Acaso = () => {
     }
     return (
         <CommentsForm data={data}/>
+
     )
 }
 

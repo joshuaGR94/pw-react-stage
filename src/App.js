@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import DataTable from './DataTable';
+import DataTable from './pages/DataTable';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
 import Navigation from './components/navbar/Navigation';
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
-import TodosTable from './PostTable';
-import CommentsForm from './CommentsForm';
-import Acaso from './components/form/a caso';
+import TodosTable from './pages/PostTable';
+import CommentsForm from './pages/CommentsForm';
+import Acaso from './components/form/acaso';
 
 
 function App() {
