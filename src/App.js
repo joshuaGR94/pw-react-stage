@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import TodosTable from './PostTable';
 import CommentsForm from './CommentsForm';
+import Acaso from './components/form/a caso';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     <Route exact path="/comments" component={DataTable} />
                     <Route path="/todos" component={TodosTable} />
                     <Route path="/form" component={CommentsForm} />
+                    <Route path="/caso" component={Acaso} />
                     <Route component={NotFound} />{/*sempre alla fine*/}
                 </Switch>
             </Router>

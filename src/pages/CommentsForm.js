@@ -1,13 +1,13 @@
 import React from 'react'
 import { Form, Formik } from 'formik'
-import FormikControl from './components/form/FormikControls'
+import FormikControl from '../components/form/FormikControls'
 import { Button, Container } from 'react-bootstrap';
 import * as Yup from 'yup'
 
 
-const CommentsForm = () => {
-
-    const initialValue = {
+const CommentsForm = (props) => {
+    const {data} = props;
+        const initialValue = {
         name: '',
         email: '',
         body: ''
@@ -25,7 +25,7 @@ const CommentsForm = () => {
     return (
         <Container>
 
-            <Formik initialValues={initialValue} validationSchema={validationSchema} onSubmit={onSubmit}>
+            <Formik initialValues={data || initialValue} validationSchema={validationSchema} onSubmit={onSubmit}>
                 {formik => {
                     return (<Form>
                         <FormikControl control='input' type='text' name='name' label='Titolo' />

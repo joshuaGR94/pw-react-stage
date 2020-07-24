@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react'
-import useFullPageLoader from './hooks/useFullPageLoader';
+import useFullPageLoader from '../hooks/useFullPageLoader';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
@@ -8,7 +8,7 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import { Container, Button } from 'react-bootstrap'
-import { AddButton } from './components/Button-CRUD/AddButton';
+import { AddButton } from '../components/Button-CRUD/AddButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 

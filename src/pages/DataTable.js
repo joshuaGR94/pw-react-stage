@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import './components/FontAwesomeIcons';
+import '../components/FontAwesomeIcons';
 import './App.css';
-import useFullPageLoader from './hooks/useFullPageLoader';
-import Paginator from './components/table/Paginator';
-import TableHeader from './components/table/TableHeader';
-import Search from './components/table/Search';
+import useFullPageLoader from '../hooks/useFullPageLoader';
+import Paginator from '../components/table/Paginator';
+import TableHeader from '../components/table/TableHeader';
+import Search from '../components/table/Search';
 
 function DataTable() {
 
