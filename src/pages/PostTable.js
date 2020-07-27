@@ -18,21 +18,19 @@ const TodosTable = () => {
     const [loader, showLoader, hideLoader] = useFullPageLoader();
     const { SearchBar } = Search;
     const noData = 'nessun dato';
-    
-    
-    
+
+
+
     const deleteRow = () => {
-        const data = this.node.selectionContext.selected;
-        console.log(data)
-        //todos.filter(row => row.id !== data.id);
+        //setTodos(todos.filter(row => row.id !== data.id));
     }
 
-    
+
     const actionFormatter = (cell, row, rowIndex) => {
         return (<div className="d-flex justify-content-around">
             <Button variant='secondary' size='sm' onClick={() => console.log(row)} ><FontAwesomeIcon icon='edit' />Modifica</Button>
             <Button variant="danger" size='sm' onClick={() => console.log(row.id)} ><FontAwesomeIcon icon='trash-alt' /> Elimina</Button>
-            </div>)
+        </div>)
     }
 
     //dataField must match the key of the json obj  
@@ -41,7 +39,7 @@ const TodosTable = () => {
         { dataField: "name", text: "Titolo",/* filter: textFilter(),*/ sort: true },
         { dataField: "email", text: "email", filter: textFilter(), sort: true },
         { dataField: "body", text: "body", filter: textFilter(), sort: true },
-        { datafield: "action", text: "action", isDummyField: true, formatter: actionFormatter ,classes: {verticalAling: "top"}}
+        { datafield: "action", text: "action", isDummyField: true, formatter: actionFormatter, classes: { verticalAling: "top" } }
 
     ];
     const selectRow = {
@@ -53,7 +51,7 @@ const TodosTable = () => {
 
     }
 
-   const getData = () => {
+    const getData = () => {
 
         showLoader();
 
@@ -89,11 +87,10 @@ const TodosTable = () => {
                     props => (
                         <Fragment>
                             <div className='row'>
-                                <SearchBar {...props.searchProps} />
-                              
-                                    <AddButton/>
-
-
+                                <div className='col-md-6'>
+                                    <SearchBar {...props.searchProps} />
+                                </div>
+                                <AddButton />  
                             </div>
 
                             <div className='table table-responsive table-sm '>

@@ -16,21 +16,23 @@ const Navigation = () => {
         <Navbar expand="lg" className="navbar navbar-dark bg-dark mb-4">
             <Navbar.Toggle aria-controls='basic-navbar' ></Navbar.Toggle>
             <Navbar.Collapse id='basic-navbar'>
-            <Nav>
-                <Nav.Item>
-                <Link to="/" className='nav-link'>
-                        Home    
+                <Nav>
+                    <Nav.Item>
+                        <Link to="/" className='nav-link'>
+                            Home
                 </Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Link to="/comments" className='nav-link'> Table Comments
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Link to="/comments" className='nav-link'>
+                            Table Comments
                         </Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Link to="/todos" className='nav-link'> Table Comments with react boostrap table
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Link to="/todos" className='nav-link'>
+                            Table Comments with react boostrap table
                         </Link>
-                </Nav.Item>
-            </Nav>
+                    </Nav.Item>
+                </Nav>
             </Navbar.Collapse>
         </Navbar>
 
