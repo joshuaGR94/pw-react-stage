@@ -6,7 +6,8 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import TodosTable from './pages/PostTable';
 import CommentsForm from './pages/CommentsForm';
-import Acaso from './components/form/acaso';
+import prova from './pages/prova';
+import DoubleTable from './pages/DoubleTable';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
                     <Route exact path="/comments" component={DataTable} />
                     <Route path="/todos" component={TodosTable} />
                     <Route path="/form" component={CommentsForm} />
-                    <Route path="/caso" component={Acaso} />
+                    <Route path="/prova" component={prova} />
+                    <Route path="/double_table" component={DoubleTable} />
                     <Route component={NotFound} />{/*sempre alla fine*/}
                 </Switch>
             </Router>

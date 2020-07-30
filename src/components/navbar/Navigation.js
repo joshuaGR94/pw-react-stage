@@ -32,6 +32,11 @@ const Navigation = () => {
                             Table Comments with react boostrap table
                         </Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Link to="/double_table" className='nav-link'>
+                            Doppia Tabella
+                        </Link>
+                    </Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 
 
 const CommentsForm = (props) => {
-    const {data} = props;
+    const {data,onSubmit,...rest} = props;
         const initialValue = {
         name: '',
         email: '',
@@ -21,11 +21,11 @@ const CommentsForm = (props) => {
 
 
 
-    const onSubmit = (value) => console.log('Form Data', value)
+   // const onSubmit = (value) => console.log('Form Data', value)
     return (
-        <Container>
+        <Container className="mb-3 mt-3">
 
-            <Formik initialValues={data || initialValue} validationSchema={validationSchema} onSubmit={onSubmit}>
+            <Formik initialValues={data|| initialValue} validationSchema={validationSchema} onSubmit={onSubmit} {...rest}>
                 {formik => {
                     return (<Form>
                         <FormikControl control='input' type='text' name='name' label='Titolo' />
@@ -35,7 +35,8 @@ const CommentsForm = (props) => {
                     </Form>)
                 }}
             </Formik>
-        </Container>
+            </Container>
+  
     )
 }
 
