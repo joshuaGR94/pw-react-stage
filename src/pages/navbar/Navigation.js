@@ -34,7 +34,7 @@ const Navigation = () => {
                     </Nav.Item>
                     <Nav.Item>
                         <Link to="/double_table" className='nav-link'>
-                            Doppia Tabella
+                           Double Table
                         </Link>
                     </Nav.Item>
                 </Nav>

@@ -14,14 +14,25 @@ const PhotosTable = () => {
     const [photos, setPhotos] = useState([]);
     const [loading,setLoading] = useState(false)
     const { SearchBar } = Search;
+    
+    
+    const actionFormatter = (cell, row, rowIndex) => {
+        return (<div className="d-flex justify-content-around">
+            <img src={cell} alt={row.title}/>
+        </div>)
+    }
+    
+    
     const column = [
 
         { dataField: "title", text: "Titolo", filter: textFilter(), sort: true },
         { dataField: "url", text: "Link" },
-        { dataField: "thumbnailUrl", text: "thumb" }
+        { dataField: "thumbnailUrl", text: "thumb",formatter: actionFormatter}
 
 
     ];
+
+   
 
     const selectRow = {
         mode: 'checkbox',

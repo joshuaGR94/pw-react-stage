@@ -32,23 +32,25 @@ const CommentsTable = () => {
 
 
     const editRow = (row) => {
-        handleShow();
         setComment(row);
+        handleShow();
+       
     }
     const update = (value) => {
-        if (!comment) {
+        if (Object.keys(comment).length === 0 ) {
             value.id = comments.length;
-            setComments([...comments, value]);
-            setComment({});
+            setComments([value,...comments]);
             handleClose();
         }
-        else {
+       else {
             comment.name = value.name;
             comment.email = value.email;
             comment.body = value.body;
             console.log(comment)
-            let datacomments=(comments.filter(rows => rows.id !== comment.id))
-            setComments([comment,...datacomments]);
+            let data=[...comments];
+            let index =data.findIndex(obj => obj.id===comment.id);
+            data[index]=comment;
+            setComments([...data]);
             handleClose();
         }
     
@@ -145,14 +147,4 @@ const CommentsTable = () => {
 
 export default CommentsTable;
 
-
-
-    /* const add = (value) => {
-         value.id = comments.length;
-         setComments(...comments, value);
-         handleClose();
-     }
-       const onAdd = () => {
-         handleShow();
-     }*/
      

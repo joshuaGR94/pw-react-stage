@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import DataTable from './pages/DataTable';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom'
-import Navigation from './components/navbar/Navigation';
+import Navigation from './pages/navbar/Navigation';
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import TodosTable from './pages/PostTable';
@@ -20,7 +20,6 @@ function App() {
                     <Route exact path="/comments" component={DataTable} />
                     <Route path="/todos" component={TodosTable} />
                     <Route path="/form" component={CommentsForm} />
-                    <Route path="/prova" component={prova} />
                     <Route path="/double_table" component={DoubleTable} />
                     <Route component={NotFound} />{/*sempre alla fine*/}
                 </Switch>

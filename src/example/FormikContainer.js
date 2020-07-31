@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import { Button } from 'react-bootstrap';
-import FormikControls from './FormikControls';
+import FormikControls from '../components/form/FormikControls';
 
 //example use of Formik
 const FormikContainer = () => {
